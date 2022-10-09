@@ -6,7 +6,7 @@ local req = http_request or request or syn.request
 
 if not req then
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Rogue Hub Error",
+        Title = "Warlex Hub Error",
         Text = "Your exploit is unsupported with Rogue Hub!",
         Duration = 5
     })
@@ -15,18 +15,18 @@ if not req then
 end
 
 if makefolder and isfolder and not isfolder("Rogue Hub") then
-    makefolder("Rogue Hub")
+    makefolder("Warlex Hub")
 
-    makefolder("Rogue Hub/Configs")
-    makefolder("Rogue Hub/Data")
+    makefolder("Warlex Hub/Configs")
+    makefolder("Warlex Hub/Data")
 end
 
-if not isfile("/Rogue Hub/Configs/Quotes.ROGUEHUB") then 
-    writefile("/Rogue Hub/Configs/Quotes.ROGUEHUB", req({ Url = "https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Extra/Quotes.ROGUEHUB" }).Body);
+if not isfile("/Warlex Hub/Configs/Quotes.ROGUEHUB") then 
+    writefile("/Warlex Hub/Configs/Quotes.ROGUEHUB", req({ Url = "https://raw.githubusercontent.com/EMRE13333/WarlexHub/main/Extra/Quotes.WarlexHUB" }).Body);
 end
 
 local response = req({
-    Url = "https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Games/" .. game.PlaceId .. ".lua",
+    Url = "https://raw.githubusercontent.com/EMRE13333/WarlexHub/main/Games/" .. game.PlaceId .. ".lua",
     Method = "GET"
 })
 
@@ -39,11 +39,11 @@ if response.Body ~= "404: Not Found" then
         game:GetService("VirtualInputManager"):SendMouseButtonEvent(0, 0, 2, false, nil, 0)
     end)
     
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Games/" .. game.PlaceId .. ".lua", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EMRE13333/WarlexHub/main/Games/" .. game.PlaceId .. ".lua", true))()
 else
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Rogue Hub Error",
-        Text = "The game you are trying to play is not supported with Rogue Hub!",
+        Title = "Warlex Hub Error",
+        Text = "The game you are trying to play is not supported with Warlex Hub!",
         Duration = 5
     })
     
