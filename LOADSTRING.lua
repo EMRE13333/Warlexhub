@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Main.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/EMRE13333/Warlexhub/main/Main.lua", true))()
