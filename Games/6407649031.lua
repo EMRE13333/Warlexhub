@@ -10,7 +10,7 @@ if getconnections then
     end
 end
 
-if getgenv().Warlex_AlreadyLoaded ~= nil then error("Warlex Hub was already found running or you have other scripts executed!") return else getgenv().Warlex_AlreadyLoaded = 0 end
+if getgenv().Warlex_AlreadyLoaded ~= nil then error("Warlex ADMİN Hub was already found running or you have other scripts executed!") return else getgenv().Warlex_AlreadyLoaded = 0 end
 
 if game.PlaceId ~= 6407649031 then return end
 
@@ -54,7 +54,7 @@ sound.PlayOnRemove = true
 sound.Volume = 0.5
 
 local Config = {
-    WindowName = "Warlex Hub | " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+    WindowName = "Warlex ADMİN  Hub | " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
     Color = Color3.fromRGB(153, 148, 148),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -93,11 +93,11 @@ getgenv().settings = {
     fovColor = Color3.fromRGB(255,255,255)
 }
 
-if makefolder and isfolder and not isfolder("Warlex Hub") then
-    makefolder("Warlex Hub")
+if makefolder and isfolder and not isfolder("Warlex ADMİN Hub") then
+    makefolder("Warlex ADMİN Hub")
 
-    makefolder("Warlex Hub/Configs")
-    makefolder("Warlex Hub/Data")
+    makefolder("Warlex ADMİN Hub/Configs")
+    makefolder("Warlex ADMİN Hub/Data")
 end
 
 if readfile and isfile and isfile("Warlex Hub/Configs/NoScopeArcade_Config.WarlexHUB") then

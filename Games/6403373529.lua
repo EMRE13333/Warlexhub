@@ -1,4 +1,4 @@
-if getgenv().Rogue_AlreadyLoaded ~= nil then error("Rogue Hub was already found running or you have other scripts executed!") return else getgenv().Rogue_AlreadyLoaded = 0 end
+if getgenv().Warlex_AlreadyLoaded ~= nil then error("Warlex Hub was already found running or you have other scripts executed!") return else getgenv().Warlex_AlreadyLoaded = 0 end
 
 if game.PlaceId == 6403373529 or game.PlaceId == 9015014224 or game.PlaceId == 9431156611 then else return end
 
@@ -10,7 +10,7 @@ end
 local teleportFunc = queueonteleport or queue_on_teleport or syn and syn.queue_on_teleport
 
 if teleportFunc then
-    teleportFunc([[loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Main.lua", true))()]])
+    teleportFunc([[loadstring(game:HttpGet("https://raw.githubusercontent.com/EMRE13333/WarlexHub/main/Main.lua", true))()]])
 end
 
 -- walkspeed anticheat bypass for slap royale
@@ -40,7 +40,7 @@ sound.PlayOnRemove = true
 sound.Volume = 0.5
 
 local Config = {
-    WindowName = "Rogue Hub | " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
+    WindowName = "Warlex Hub | " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name,
     Color = Color3.fromRGB(30,30,30),
     Keybind = Enum.KeyCode.RightControl
 }
@@ -80,25 +80,25 @@ getgenv().settings = {
     wallNoclip = false
 }
 
-if makefolder and isfolder and not isfolder("Rogue Hub") then
-    makefolder("Rogue Hub")
+if makefolder and isfolder and not isfolder("Warlex Hub") then
+    makefolder("Warlex Hub")
 
-    makefolder("Rogue Hub/Configs")
-    makefolder("Rogue Hub/Data")
+    makefolder("Warlex Hub/Configs")
+    makefolder("Warlex Hub/Data")
 end
 
-if readfile and isfile and isfile("Rogue Hub/Configs/SlapBattles_Config.ROGUEHUB") then
-    getgenv().settings = game:GetService("HttpService"):JSONDecode(readfile("Rogue Hub/Configs/SlapBattles_Config.ROGUEHUB"))
+if readfile and isfile and isfile("Warlex Hub/Configs/SlapBattles_Config.WarlexHUB") then
+    getgenv().settings = game:GetService("HttpService"):JSONDecode(readfile("Warlex Hub/Configs/SlapBattles_Config.WarlexHUB"))
 end
 
 local function saveSettings()
     if writefile then
-        writefile("Rogue Hub/Configs/SlapBattles_Config.ROGUEHUB", game:GetService("HttpService"):JSONEncode(getgenv().settings))
+        writefile("Warlex Hub/Configs/SlapBattles_Config.WarlexHUB", game:GetService("HttpService"):JSONEncode(getgenv().settings))
     end
 end
 
 function getQuote()
-    local userQuotes = game:GetService("HttpService"):JSONDecode(readfile("/Rogue Hub/Configs/Quotes.ROGUEHUB"))
+    local userQuotes = game:GetService("HttpService"):JSONDecode(readfile("/Warlex Hub/Configs/Quotes.WarlexHUB"))
     return userQuotes[math.random(#userQuotes)]
 end
 
@@ -154,7 +154,7 @@ localPlr.CharacterAdded:Connect(function()
 
     repeat task.wait() until getTool() ~= nil
 
-    if getgenv().settings.auraSlap and getgenv().settings.auraOption == "Legit" then
+    if getgenv().settings.auraSlap and getgenv().settings.auraOption == "Legit BYPASS WARLEX" then
         getTool().Glove.Touched:Connect(function(part)
             if part.Parent:FindFirstChildOfClass("Humanoid") and getgenv().settings.auraSlap and getgenv().settings.auraOption == "Legit" then
                 getTool():Activate()
@@ -168,7 +168,7 @@ end)
 
 local playerSec = mainTab:CreateSection("Player")
 
-playerSec:CreateToggle("Autoclicker", getgenv().settings.autoClicker or false, function(bool)
+playerSec:CreateToggle("Autoclicker ANTİBYPASS", getgenv().settings.autoClicker or false, function(bool)
     getgenv().settings.autoClicker = bool
     saveSettings()
 end)
@@ -436,13 +436,13 @@ local auraDrop = auraSec:CreateDropdown("Type", {"Legit","Blatant"}, function(op
 	if getgenv().settings.auraOption == "Blatant" then
 	    if game.PlaceId ~= 9431156611 then
     	    game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Rogue Hub Note",
+                Title = "Warlex Hub Note",
                 Text = "Blatant Type only works on the default glove, use legit for any glove type.",
                 Duration = 5
             })
         else
             game:GetService("StarterGui"):SetCore("SendNotification", {
-                Title = "Rogue Hub Note",
+                Title = "Warlex Hub Note",
                 Text = "Blatant Type only works on the Pack-A-Punch glove, use legit for any glove type.",
                 Duration = 5
             })
@@ -556,22 +556,22 @@ local infoSec = infoTab:CreateSection("Credits")
 
 local req = http_request or request or syn.request
 
-infoSec:CreateButton("Father of Rogue Hub: Kitzoon#7750", function()
-    setclipboard("Kitzoon#7750")
+infoSec:CreateButton("Father of Warlex Hub: Suspect1337#9925", function()
+    setclipboard("Suspect1337#9925")
 
     game:GetService("StarterGui"):SetCore("SendNotification", {
-        Title = "Rogue Hub Note",
-        Text = "Copied Kitzoon's discord username and tag to your clipboard.",
+        Title = "Warlex Hub Note",
+        Text = "Copied warlex's discord username and tag to your clipboard.",
         Duration = 5
     })
 end)
 
-infoSec:CreateButton("Help with a lot: Kyron#6083", function()
-    setclipboard("Kyron#6083")
+infoSec:CreateButton("Help with a lot: Suspect1337#9925", function()
+    setclipboard("Suspect1337#9925")
 
     game:GetService("StarterGui"):SetCore("SendNotification", {
         Title = "Script Notification",
-        Text = "Copied Kyron's discord username and tag to your clipboard.",
+        Text = "Copied WARLEX's discord username and tag to your clipboard.",
         Duration = 5
     })
 end)
@@ -590,7 +590,7 @@ infoSec:CreateButton("Join us on discord!", function()
             Body = game:GetService("HttpService"):JSONEncode(
             {
                 ["args"] = {
-                ["code"] = "VdrHU8KP7c",
+                ["code"] = "GYB7CgEU",
                 },
 
                 ["cmd"] = "INVITE_BROWSER",
@@ -598,10 +598,10 @@ infoSec:CreateButton("Join us on discord!", function()
             })
         })
     else
-        setclipboard("https://discord.gg/VdrHU8KP7c")
+        setclipboard("https://discord.gg/GYB7CgEU")
 
         game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "Rogue Hub Note",
+            Title = "Warlex Hub Note",
             Text = "Copied our discord server to your clipboard.",
             Duration = 5
         })
@@ -735,7 +735,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Rogue Hub Message",
+    Title = "Warlex Hub Message",
     Text = "Successfully loaded.",
     Duration = 5
 })
@@ -746,7 +746,7 @@ task.wait(5)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
     Title = "Please Note",
-    Text = "The rogue hub version you are using is currently in alpha, bugs may occur.",
+    Text = "The Warlex hub version you are using is currently in alpha, bugs may occur.",
     Duration = 10
 })
 
