@@ -1,4 +1,4 @@
-# _Rogue Hub_
+# _WARLEX Hub_
  · [Discord Server](https://discord.gg/GYB7CgEU) · [Script](loadstring(game:HttpGet("https://raw.githubusercontent.com/EMRE13333/Warlexhub/main/Main.lua", true))())
 <br>
 <br>
